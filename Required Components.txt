@@ -1,0 +1,13 @@
+Required Components for this project:
+
+	1. 'ZMPT101B' voltage sensor
+	2. Arduino UNO R3
+	3. 5V Relay module
+	4. LCD display
+	5. I2C module for LCD display
+
+This project requires following 'Arduino IDE' library functions:
+
+	1. ZMPT101B
+	2. LiquidCrystal_I2C
+
