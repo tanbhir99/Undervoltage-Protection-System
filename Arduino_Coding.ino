@@ -4,7 +4,6 @@
 
 #define SENSITIVITY 160.0f
 const int vt = 215;
-// const int vh = 230;
 const int relay = 8;
 const int vcc_relay = 9;
 int zmpt = 7;
@@ -26,19 +25,11 @@ void setup() {
 void loop() {
   digitalWrite(zmpt,HIGH);
   digitalWrite(vcc_relay,HIGH);
-  //lcd.setCursor(0, 0);
-  //cd.print("Normal Condition.");
-  //lcd.setCursor(1,1);
-  //lcd.print("Voltage: ");
-  //delay(3000);
-  //lcd.clear();
   float voltage = voltageSensor.getRmsVoltage();
   Serial.print("Voltage is: ");
   Serial.println(voltage);
-  //lcd.print(voltage);
   if (voltage < vt ) {
     digitalWrite(relay,LOW);
-    //lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Under Voltage ! ");
     lcd.setCursor(1,1);
@@ -53,6 +44,5 @@ void loop() {
     lcd.print("Voltage: ");
     lcd.print(voltage);
   }
-  //Serial.println(analogRead(A0));
   delay(200);
 }
